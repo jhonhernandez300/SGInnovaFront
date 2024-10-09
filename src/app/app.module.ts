@@ -33,6 +33,7 @@ import { LoginComponent } from './componentes/general/login/login.component';
 //import { AuthInterceptorService } from '../app/servicios/auth-interceptor.service';
 import { AccessDeniedComponent } from './componentes/general/access-denied/access-denied.component';
 import { ActualizarUsuarioComponent } from './componentes/usuarios/actualizar-usuario/actualizar-usuario.component';
+import { ObtenerTodosProyectosComponent } from './componentes/proyectos/obtener-todos-proyectos/obtener-todos-proyectos.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ActualizarUsuarioComponent } from './componentes/usuarios/actualizar-us
     ActualizarTareaComponent,
     LoginComponent,
     AccessDeniedComponent,
-    ActualizarUsuarioComponent
+    ActualizarUsuarioComponent,
+    ObtenerTodosProyectosComponent
   ],
   imports: [
     BrowserModule,

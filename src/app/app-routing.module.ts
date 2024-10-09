@@ -9,12 +9,14 @@ import { LoginComponent } from '../app/componentes/general/login/login.component
 //import { authGuard } from '../app/helpers/auth.guard';
 import { AccessDeniedComponent } from '../app/componentes/general/access-denied/access-denied.component';
 import { ActualizarUsuarioComponent } from '../app/componentes/usuarios/actualizar-usuario/actualizar-usuario.component';
+import { ObtenerTodosProyectosComponent } from '../app/componentes/proyectos/obtener-todos-proyectos/obtener-todos-proyectos.component';
 
 const routes: Routes = [
   { path: 'actualizar-tarea', component: ActualizarTareaComponent },
   { path: 'obtener-todas-tareas', component: ObtenerTodasTareasComponent },
-  { path: '**', component: ObtenerTodasTareasComponent },
-    { path: '', component: ObtenerTodasTareasComponent}
+  { path: 'obtener-todos-proyectos', component: ObtenerTodosProyectosComponent },
+  { path: '**', component: ObtenerTodosProyectosComponent },
+  { path: '', component: ObtenerTodosProyectosComponent}
         
   ];
 //   { path: 'login', component: LoginComponent },
