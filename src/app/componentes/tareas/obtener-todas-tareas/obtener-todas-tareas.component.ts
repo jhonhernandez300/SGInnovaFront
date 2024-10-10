@@ -37,15 +37,14 @@ export class ObtenerTodasTareasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.rol = this.usuarioService.ObtenerRol();
-    this.rol =  "Administrador";
+    this.rol = this.usuarioService.ObtenerRol();   
     this.loadAllTareas();
   }
 
   public loadAllTareas(): void {
     this.tareaService.ObtenerTareasConUsuarios().subscribe(
       (response: any) => {
-        //console.log("respuesta", response);
+        
         if (response.message != "Tareas obtenidas exitosamente.") {
           this.handleEmpty(response.data);
         } else {           
@@ -53,10 +52,9 @@ export class ObtenerTodasTareasComponent implements OnInit {
           // Conecta el paginador
           this.dataSource.paginator = this.paginator; 
 
-          //console.log("rol ", this.rol);
+          
           if(this.rol == "Empleado"){
-            //const id = Number(this.sessionStorageService.getData("id"));
-            const id = 1;
+            const id = Number(this.sessionStorageService.getData("id"));            
             this.dataSource.data = response.data.filter((tarea: iTareaConUsuarioDTO) => tarea.usuarioId === id);
           }                    
         }

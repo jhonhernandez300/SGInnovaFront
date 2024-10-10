@@ -32,7 +32,7 @@ import { ObtenerTodasTareasComponent } from './componentes/tareas/obtener-todas-
 import { MenuComponent } from './componentes/general/menu/menu.component';
 import { ActualizarTareaComponent } from './componentes/tareas/actualizar-tarea/actualizar-tarea.component';
 import { LoginComponent } from './componentes/general/login/login.component';
-//import { AuthInterceptorService } from '../app/servicios/auth-interceptor.service';
+import { AuthInterceptorService } from '../app/servicios/auth-interceptor.service';
 import { AccessDeniedComponent } from './componentes/general/access-denied/access-denied.component';
 import { ActualizarUsuarioComponent } from './componentes/usuarios/actualizar-usuario/actualizar-usuario.component';
 import { ObtenerTodosProyectosComponent } from './componentes/proyectos/obtener-todos-proyectos/obtener-todos-proyectos.component';
@@ -81,12 +81,12 @@ import { ActualizarProyectoComponent } from './componentes/proyectos/actualizar-
     MatNativeDateModule
   ],
   providers: [
-    // provideAnimationsAsync(),
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptorService,
-    //   multi: true
-    // }
+    provideAnimationsAsync(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

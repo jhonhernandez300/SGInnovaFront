@@ -9,6 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { ProyectoTransferService } from '../../../servicios/proyecto-transfer.service';
 import { UsuarioService } from '../../../servicios/usuario.service';
+import { SessionStorageService } from '../../../servicios/session-storage.service';
 
 @Component({
   selector: 'app-obtener-todos-proyectos',
@@ -30,13 +31,12 @@ export class ObtenerTodosProyectosComponent implements OnInit {
     private proyectoService: ProyectoService, 
     public dialog: MatDialog,
     public proyectoTransferService: ProyectoTransferService,
-    private usuarioService: UsuarioService
-    // private sessionStorageService: SessionStorageService
+    private usuarioService: UsuarioService,
+    private sessionStorageService: SessionStorageService
   ) { }
 
   ngOnInit(): void {
-     //this.rol = this.usuarioService.ObtenerRol();
-     this.rol =  "Administrador";
+     this.rol = this.usuarioService.ObtenerRol();     
     this.loadAllProjects();
   }
 
@@ -51,8 +51,7 @@ export class ObtenerTodosProyectosComponent implements OnInit {
           this.dataSource.paginator = this.paginator; 
           
           if(this.rol == "Empleado"){
-            //const id = Number(this.sessionStorageService.getData("id"));
-            const id = 1;
+            const id = Number(this.sessionStorageService.getData("id"));            
             this.dataSource.data = response.data.filter((proyecto: iProyecto) => proyecto.proyectoId === id);
           }                    
         }

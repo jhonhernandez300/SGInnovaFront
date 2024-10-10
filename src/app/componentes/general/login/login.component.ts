@@ -71,8 +71,7 @@ export class LoginComponent {
     if (this.myForm.valid) {      
 
       this.usuarioService.Login(this.myForm.value).subscribe(
-        (response: any) => {          
-          console.log("En el componente ", response);
+        (response: any) => {     
           //Acceder al token con un servicio inyectado
           this.sessionStorageService.setToken('token', response.token);
           var tokenAdquirido = this.usuarioService.getRoleFromToken(response.token);

@@ -6,7 +6,7 @@ import { GuardarUsuarioComponent } from '../app/componentes/usuarios/guardar-usu
 import { ObtenerTodasTareasComponent } from '../app/componentes/tareas/obtener-todas-tareas/obtener-todas-tareas.component';
 import { ActualizarTareaComponent } from '../app/componentes/tareas/actualizar-tarea/actualizar-tarea.component';
 import { LoginComponent } from '../app/componentes/general/login/login.component';
-//import { authGuard } from '../app/helpers/auth.guard';
+import { authGuard } from '../app/helpers/auth.guard';
 import { AccessDeniedComponent } from '../app/componentes/general/access-denied/access-denied.component';
 import { ActualizarUsuarioComponent } from '../app/componentes/usuarios/actualizar-usuario/actualizar-usuario.component';
 import { ObtenerTodosProyectosComponent } from '../app/componentes/proyectos/obtener-todos-proyectos/obtener-todos-proyectos.component';
@@ -14,55 +14,52 @@ import { GuardarProyectoComponent } from '../app/componentes/proyectos/guardar-p
 import { ActualizarProyectoComponent } from '../app/componentes/proyectos/actualizar-proyecto/actualizar-proyecto.component';
 
 const routes: Routes = [
-  { path: 'actualizar-tarea', component: ActualizarTareaComponent },
-  { path: 'actualizar-proyecto', component: ActualizarProyectoComponent },
-  { path: 'obtener-todas-tareas', component: ObtenerTodasTareasComponent },
-  { path: 'obtener-todos-proyectos', component: ObtenerTodosProyectosComponent },
-  { path: 'guardar-usuario', component: GuardarUsuarioComponent },
-  { path: 'obtener-todos-usuarios', component: ObtenerTodosComponent},
-  { path: 'usuario-actualizar', component: ActualizarUsuarioComponent },
-  { path: 'crear-tarea', component: CrearTareaComponent },
-  { path: 'guardar-proyecto', component: GuardarProyectoComponent },
-
-  { path: '**', component: ObtenerTodosProyectosComponent },
-  { path: '', component: ObtenerTodosProyectosComponent},
-
-        
-  ];
-//   { path: 'login', component: LoginComponent },
-//   { path: 'usuario-actualizar', component: ActualizarUsuarioComponent, 
-//   canActivate: [authGuard],
-//   data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] }
-// },
-//   { path: 'actualizar-tarea', component: ActualizarTareaComponent, 
-//     canActivate: [authGuard],
-//     data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] }
-//   },
-//   {
-//     path: 'access-denied',
-//     component: AccessDeniedComponent
-//   },
-//   { path: 'obtener-todas-tareas', component: ObtenerTodasTareasComponent, 
-//     canActivate: [authGuard],
-//     data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] }
-//   },
-//   { path: 'guardar-usuario', component: GuardarUsuarioComponent, 
-//     canActivate: [authGuard],
-//     data: { expectedRole: 'administrador' }
-//   },
-//   { path: 'obtener-todos-usuarios', component: ObtenerTodosComponent, 
-//     canActivate: [authGuard],
-//     data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] }
-//   },
-//   { path: 'crear-tarea', component: CrearTareaComponent, 
-//     canActivate: [authGuard],
-//     data: { expectedRole: 'administrador' }
-//   },
-//   { path: '**', component: LoginComponent,
-//     data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] } },
-//   { path: '', component: LoginComponent,
-//     data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] } } 
-//];
+   { path: 'login', component: LoginComponent },
+  { path: 'usuario-actualizar', component: ActualizarUsuarioComponent, 
+  canActivate: [authGuard],
+  data: { expectedRole: ['administrador', 'Supervisor'] }
+},
+  { path: 'actualizar-tarea', component: ActualizarTareaComponent, 
+    canActivate: [authGuard],
+    data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] }
+  },
+  { path: 'actualizar-proyecto', component: ActualizarProyectoComponent, 
+    canActivate: [authGuard],
+    data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] }
+  },  
+  {
+    path: 'access-denied',
+    component: AccessDeniedComponent
+  },
+  { path: 'obtener-todas-tareas', component: ObtenerTodasTareasComponent, 
+    canActivate: [authGuard],
+    data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] }
+  },
+  { path: 'guardar-usuario', component: GuardarUsuarioComponent, 
+    canActivate: [authGuard],
+    data: { expectedRole: 'administrador' }
+  },
+  { path: 'guardar-proyecto', component: GuardarProyectoComponent, 
+    canActivate: [authGuard],
+    data: { expectedRole: 'administrador' }
+  },  
+  { path: 'obtener-todos-usuarios', component: ObtenerTodosComponent, 
+    canActivate: [authGuard],
+    data: { expectedRole: ['administrador', 'Supervisor'] }
+  },
+  { path: 'obtener-todos-proyectos', component: ObtenerTodosProyectosComponent, 
+    canActivate: [authGuard],
+    data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] }
+  },  
+  { path: 'crear-tarea', component: CrearTareaComponent, 
+    canActivate: [authGuard],
+    data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] }
+  },
+  { path: '**', component: LoginComponent,
+    data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] } },
+  { path: '', component: LoginComponent,
+    data: { expectedRole: ['administrador', 'Supervisor', 'Empleado'] } } 
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

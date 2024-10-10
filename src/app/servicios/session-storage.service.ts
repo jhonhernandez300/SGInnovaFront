@@ -7,6 +7,7 @@ export class SessionStorageService {
   constructor() { }
 
   setToken(key: string, data: any): void {    
+    console.log("setToken ", data);
     sessionStorage.setItem(key, data);    
   }
 

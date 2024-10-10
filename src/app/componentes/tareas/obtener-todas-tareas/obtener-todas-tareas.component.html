@@ -36,14 +36,14 @@
           <ng-container matColumnDef="delete">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let tarea">
-              <button *ngIf="rol == 'Administrador'" mat-raised-button color="warn" (click)="delete(tarea.tareaId)">Borrar</button>
+              <button mat-raised-button color="warn" (click)="delete(tarea.tareaId)">Borrar</button>
             </td>
           </ng-container>
 
           <ng-container matColumnDef="update">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let tarea">
-              <button *ngIf="rol == 'Administrador' || rol == 'Supervisor'" mat-raised-button color="primary" (click)="update(tarea)">Actualizar</button>
+              <button mat-raised-button color="primary" (click)="update(tarea)">Actualizar</button>
             </td>
           </ng-container>
   
