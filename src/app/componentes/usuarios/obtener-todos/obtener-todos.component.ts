@@ -33,7 +33,8 @@ export class ObtenerTodosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.rol = this.usuarioService.ObtenerRol();
+    //this.rol = this.usuarioService.ObtenerRol();
+    this.rol = "Administrador";
     //console.log("rol ", this.rol);
     this.loadAllUsers();
   }

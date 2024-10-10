@@ -17,6 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +36,7 @@ import { LoginComponent } from './componentes/general/login/login.component';
 import { AccessDeniedComponent } from './componentes/general/access-denied/access-denied.component';
 import { ActualizarUsuarioComponent } from './componentes/usuarios/actualizar-usuario/actualizar-usuario.component';
 import { ObtenerTodosProyectosComponent } from './componentes/proyectos/obtener-todos-proyectos/obtener-todos-proyectos.component';
+import { GuardarProyectoComponent } from './componentes/proyectos/guardar-proyecto/guardar-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,8 @@ import { ObtenerTodosProyectosComponent } from './componentes/proyectos/obtener-
     LoginComponent,
     AccessDeniedComponent,
     ActualizarUsuarioComponent,
-    ObtenerTodosProyectosComponent
+    ObtenerTodosProyectosComponent,
+    GuardarProyectoComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +74,9 @@ import { ObtenerTodosProyectosComponent } from './componentes/proyectos/obtener-
     MatMenuModule,
     MatSelectModule,
     MatRadioModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     // provideAnimationsAsync(),

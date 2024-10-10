@@ -10,13 +10,21 @@ import { LoginComponent } from '../app/componentes/general/login/login.component
 import { AccessDeniedComponent } from '../app/componentes/general/access-denied/access-denied.component';
 import { ActualizarUsuarioComponent } from '../app/componentes/usuarios/actualizar-usuario/actualizar-usuario.component';
 import { ObtenerTodosProyectosComponent } from '../app/componentes/proyectos/obtener-todos-proyectos/obtener-todos-proyectos.component';
+import { GuardarProyectoComponent } from '../app/componentes/proyectos/guardar-proyecto/guardar-proyecto.component';
 
 const routes: Routes = [
   { path: 'actualizar-tarea', component: ActualizarTareaComponent },
   { path: 'obtener-todas-tareas', component: ObtenerTodasTareasComponent },
   { path: 'obtener-todos-proyectos', component: ObtenerTodosProyectosComponent },
+  { path: 'guardar-usuario', component: GuardarUsuarioComponent },
+  { path: 'obtener-todos-usuarios', component: ObtenerTodosComponent},
+  { path: 'usuario-actualizar', component: ActualizarUsuarioComponent },
+  { path: 'crear-tarea', component: CrearTareaComponent },
+  { path: 'guardar-proyecto', component: GuardarProyectoComponent },
+
   { path: '**', component: ObtenerTodosProyectosComponent },
-  { path: '', component: ObtenerTodosProyectosComponent}
+  { path: '', component: ObtenerTodosProyectosComponent},
+
         
   ];
 //   { path: 'login', component: LoginComponent },
