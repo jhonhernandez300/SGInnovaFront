@@ -1,10 +1,11 @@
 # MyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.12, angular material 17.3.10 and node js 20
+.14.0
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. Change the name of port on the services according with the port used by visual studio on your backend. The seeds will allow you to use several users with different roles.
 
 ## Code scaffolding
 
