@@ -12,6 +12,15 @@ export class ProyectoService {
 
   constructor(private http: HttpClient) { }
 
+  ActualizarProyecto(proyecto: iProyecto): Observable<any> {             
+    return this.http.put(`${this.apiUrl}/ActualizarProyecto/${proyecto.proyectoId}`, proyecto).pipe(
+      catchError(error => {
+          console.error('Request error:', error);
+          return throwError(error);
+      })    
+    );    
+  }
+
   GuardarProyectoAsync(proyecto: iProyecto): Observable<any> {         
     console.log(proyecto);
     return this.http.post(`${this.apiUrl}/GuardarProyectoAsync`, proyecto).pipe(

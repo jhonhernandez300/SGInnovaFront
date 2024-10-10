@@ -7,7 +7,7 @@ import { CloseDialogComponent } from '../../general/close-dialog/close-dialog.co
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { TareaTransferService } from '../../../servicios/tarea-transfer.service';
+import { ProyectoTransferService } from '../../../servicios/proyecto-transfer.service';
 import { UsuarioService } from '../../../servicios/usuario.service';
 
 @Component({
@@ -29,7 +29,7 @@ export class ObtenerTodosProyectosComponent implements OnInit {
     private router: Router,    
     private proyectoService: ProyectoService, 
     public dialog: MatDialog,
-    public tareaTransferService: TareaTransferService,
+    public proyectoTransferService: ProyectoTransferService,
     private usuarioService: UsuarioService
     // private sessionStorageService: SessionStorageService
   ) { }
@@ -69,9 +69,9 @@ export class ObtenerTodosProyectosComponent implements OnInit {
   }
  
   update(proyecto: iProyecto) {
-    // this.tareaTransferService.changeTarea(tarea);
-    // //console.log("update", tarea);
-    // this.router.navigate(['/actualizar-proyecto']);        
+    this.proyectoTransferService.changeProject(proyecto);
+    //console.log("update", tarea);
+    this.router.navigate(['/actualizar-proyecto']);        
   }
 
   delete(id: number) {

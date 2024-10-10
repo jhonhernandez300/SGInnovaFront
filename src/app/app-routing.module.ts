@@ -11,9 +11,11 @@ import { AccessDeniedComponent } from '../app/componentes/general/access-denied/
 import { ActualizarUsuarioComponent } from '../app/componentes/usuarios/actualizar-usuario/actualizar-usuario.component';
 import { ObtenerTodosProyectosComponent } from '../app/componentes/proyectos/obtener-todos-proyectos/obtener-todos-proyectos.component';
 import { GuardarProyectoComponent } from '../app/componentes/proyectos/guardar-proyecto/guardar-proyecto.component';
+import { ActualizarProyectoComponent } from '../app/componentes/proyectos/actualizar-proyecto/actualizar-proyecto.component';
 
 const routes: Routes = [
   { path: 'actualizar-tarea', component: ActualizarTareaComponent },
+  { path: 'actualizar-proyecto', component: ActualizarProyectoComponent },
   { path: 'obtener-todas-tareas', component: ObtenerTodasTareasComponent },
   { path: 'obtener-todos-proyectos', component: ObtenerTodosProyectosComponent },
   { path: 'guardar-usuario', component: GuardarUsuarioComponent },

@@ -37,6 +37,7 @@ import { AccessDeniedComponent } from './componentes/general/access-denied/acces
 import { ActualizarUsuarioComponent } from './componentes/usuarios/actualizar-usuario/actualizar-usuario.component';
 import { ObtenerTodosProyectosComponent } from './componentes/proyectos/obtener-todos-proyectos/obtener-todos-proyectos.component';
 import { GuardarProyectoComponent } from './componentes/proyectos/guardar-proyecto/guardar-proyecto.component';
+import { ActualizarProyectoComponent } from './componentes/proyectos/actualizar-proyecto/actualizar-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { GuardarProyectoComponent } from './componentes/proyectos/guardar-proyec
     AccessDeniedComponent,
     ActualizarUsuarioComponent,
     ObtenerTodosProyectosComponent,
-    GuardarProyectoComponent
+    GuardarProyectoComponent,
+    ActualizarProyectoComponent
   ],
   imports: [
     BrowserModule,
